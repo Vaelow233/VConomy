@@ -57,21 +57,23 @@ VConomy is a high-performance Minecraft economy plugin designed for servers that
 | `/vconomy take <player> <type> <amount>`     | Take money from a player (admin) | `vconomy.admin.take`                 |
 | `/vconomy set <player> <type> <amount>`      | Set a player's balance (admin)   | `vconomy.admin.set`                  |
 | `/vconomy reset <player> [type]`             | Reset a player's balance (admin) | `vconomy.admin.reset`                |
+| `/vconomy reload`                            | Reload configuration             | `vconomy.admin.reload`               |
 | `/vconomy help`                              | Show help message                | `vconomy.admin.help` (for admins)    |
 
 ### Permissions
 
-| Permission            | Description              | Default     |
-|-----------------------|--------------------------|-------------|
-| `vconomy.get`         | View your own balance    | All players |
-| `vconomy.get.others`  | View others' balance     | OP          |
-| `vconomy.top`         | View balance leaderboard | All players |
-| `vconomy.pay`         | Send money to others     | All players |
-| `vconomy.admin.give`  | Admin — give money       | OP          |
-| `vconomy.admin.take`  | Admin — take money       | OP          |
-| `vconomy.admin.set`   | Admin — set balance      | OP          |
-| `vconomy.admin.help`  | Admin — view admin help  | OP          |
-| `vconomy.admin.reset` | Admin — reset balance    | OP          |
+| Permission             | Description              | Default     |
+|------------------------|--------------------------|-------------|
+| `vconomy.get`          | View your own balance    | All players |
+| `vconomy.get.others`   | View others' balance     | OP          |
+| `vconomy.top`          | View balance leaderboard | All players |
+| `vconomy.pay`          | Send money to others     | All players |
+| `vconomy.admin.give`   | Admin — give money       | OP          |
+| `vconomy.admin.take`   | Admin — take money       | OP          |
+| `vconomy.admin.set`    | Admin — set balance      | OP          |
+| `vconomy.admin.help`   | Admin — view admin help  | OP          |
+| `vconomy.admin.reset`  | Admin — reset balance    | OP          |
+| `vconomy.admin.reload` | Admin — reload config    | OP          |
 
 ## Building from Source
 
