@@ -1,0 +1,7 @@
+name: "coin"
+plural_name: "coins"
+total_digit: 16
+decimal_digit: 4
+display: "&6{balance} $"
+initial_balance: "0"
+payment_tax: 0

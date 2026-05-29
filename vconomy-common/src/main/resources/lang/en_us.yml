@@ -1,0 +1,37 @@
+help:
+  admin:
+    - "&6VConomy Help"
+    - "&a/vconomy add/give <player> <type> <balance>   &b- Give the player specific balance"
+    - "&a/vconomy take <player> <type> <balance>   &b- Take the player specific balance"
+    - "&a/vconomy set <player> <type> <balance>   &b- Set the player specific balance"
+    - "&a/vconomy reset <player> [type]   &b- Reset the player specific balance"
+    - "&a/vconomy get/show <type> [player]   &b- Show the player specific balance"
+    - "&a/vconomy top <type> [page]   &b- Show the balance top of the specific balance type"
+    - "&a/balancetop <type> [page]   &b- Same as /vconomy top"
+    - "&a/balance <type> [player]   &b- Same as /vconomy get"
+    - "&a/pay <player> <type> <balance>   &b- Pay the player specific balance"
+  player:
+    - "&6VConomy Help"
+    - "&a/vconomy get/show <type>   &b- Show the specific balance"
+    - "&a/vconomy top <type> [page]   &b- Show the balance top of the specific balance type"
+    - "&a/balancetop <type> [page]   &b- Same as /vconomy top"
+    - "&a/balance <type>   &b- Same as /vconomy get"
+    - "&a/pay <player> <type> <balance>   &b- Pay the player specific balance"
+
+balance_top:
+  title: "&6VConomy Balance Top &a({type})"
+  line: "&b- {player}: &e{balance}"
+  footer: "&dPage {page}"
+
+no_permission: "&cYou don't have permission to do this!"
+invalid_arguments: "&cInvalid arguments!"
+sql_exception: "&cFailed to execute commands duel to a SQLException: {exception}"
+invalid_balance_type: "&cInvalid balance type!"
+invalid_balance: "&cInvalid balance!"
+operation_successful: "&aOperation Successful!"
+balance_show: "&aYour {type} balance: {balance}"
+others_balance_show: "&a{player}'s {type} balance: {balance}"
+only_player_can_execute: "&cThis command can only be executed by player!"
+player_not_found: "&cPlayer not found!"
+not_enough_balance: "&cYou don't have enough balance!"
+cannot_pay_yourself: "&cCannot pay yourself!"

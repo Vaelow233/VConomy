@@ -1,0 +1,26 @@
+lang: "en_us"
+storage:
+  type: "h2"
+  host: "localhost"
+  port: 3306
+  database: "vconomy"
+  username: "root"
+  password: "passw0rd"
+  properties:
+    useSSL: false
+
+command:
+  aliases:
+    vconomy:
+      - "economy"
+      - "eco"
+      - "eeconomy"
+    balance: []
+    balancetop:
+      - "ebalancetop"
+      - "ebaltop"
+    pay: []
+
+hook:
+  vault:
+    type: "coin"

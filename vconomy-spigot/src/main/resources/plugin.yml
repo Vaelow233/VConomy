@@ -1,0 +1,17 @@
+name: VConomy
+main: org.vaelow233.vconomy.bukkit.VConomyBukkitPlugin
+version: 0.0.1
+api-version: 1.13
+author: Vaelow233
+softdepend:
+  - Vault
+  - PlaceholderAPI
+commands:
+  vconomy:
+    description: VConomy economy manager command
+  balancetop:
+    description: VConomy balance top command
+  balance:
+    description: VConomy show balance command
+  pay:
+    description: VConomy pay command
