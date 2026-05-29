@@ -18,6 +18,8 @@ public class VConomyLangConfig {
     public String playerNotFound;
     public String notEnoughBalance;
     public String cannotPayYourself;
+    public String exception;
+    public String reloading;
 
     public BalanceTop balanceTop;
 

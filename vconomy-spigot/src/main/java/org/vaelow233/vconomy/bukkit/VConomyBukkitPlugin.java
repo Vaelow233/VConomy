@@ -207,6 +207,14 @@ public class VConomyBukkitPlugin extends JavaPlugin implements VConomyPlugin, Va
     }
 
     @Override
+    public void postReload() {
+        if (isPluginEnabled("Vault")) {
+            getLogger().info("Reloading Vault hooks...");
+            reloadVaultHook(this);
+        }
+    }
+
+    @Override
     public void loadMetrics(VConomyPlugin plugin) {
         int pluginId = 31629;
         Metrics metrics = new Metrics(this, pluginId);

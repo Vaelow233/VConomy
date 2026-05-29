@@ -1,6 +1,7 @@
 help:
   admin:
     - "&6VConomy Help"
+    - "&a/vconomy reload   &b- Reload the plugin"
     - "&a/vconomy add/give <player> <type> <balance>   &b- Give the player specific balance"
     - "&a/vconomy take <player> <type> <balance>   &b- Take the player specific balance"
     - "&a/vconomy set <player> <type> <balance>   &b- Set the player specific balance"
@@ -25,7 +26,7 @@ balance_top:
 
 no_permission: "&cYou don't have permission to do this!"
 invalid_arguments: "&cInvalid arguments!"
-sql_exception: "&cFailed to execute commands duel to a SQLException: {exception}"
+sql_exception: "&cFailed to execute commands due to a SQLException: {exception}"
 invalid_balance_type: "&cInvalid balance type!"
 invalid_balance: "&cInvalid balance!"
 operation_successful: "&aOperation Successful!"
@@ -35,3 +36,5 @@ only_player_can_execute: "&cThis command can only be executed by player!"
 player_not_found: "&cPlayer not found!"
 not_enough_balance: "&cYou don't have enough balance!"
 cannot_pay_yourself: "&cCannot pay yourself!"
+exception: "&cFailed to execute commands due to an Exception: {exception}"
+reloading: "&aReloading VConomy plugin..."

@@ -55,6 +55,10 @@ public interface CommandProvider {
                         TopCommand.execute(plugin, player.isPresent() ? player.get() : sender, handledArgs);
                         break;
                     }
+                    case "reload": {
+                        ReloadCommand.execute(plugin, player.isPresent() ? player.get() : sender);
+                        break;
+                    }
                 }
             }
         } else if (command.equalsIgnoreCase("balancetop")) {
@@ -72,7 +76,30 @@ public interface CommandProvider {
     default List<String> onTabComplete(VConomyPlugin plugin, VCommandSender sender, String command, String[] args) {
         if (command.equalsIgnoreCase("vconomy")) {
             if (args.length == 1) {
-                return ListUtil.of("help", "give", "take", "set", "reset", "get", "top");
+                List<String> list = new ArrayList<>();
+                list.add("help");
+                for (String s : ListUtil.of("give", "take", "set", "reset", "get", "top", "reload")) {
+                    switch (s) {
+                        case "give":
+                        case "set":
+                        case "take":
+                        case "reset":
+                        case "reload": {
+                            if (sender.hasPermission("vconomy.admin." + s)) {
+                                list.add(s);
+                            }
+                            break;
+                        }
+                        case "get":
+                        case "top": {
+                            if (sender.hasPermission("vconomy." + s)) {
+                                list.add(s);
+                            }
+                            break;
+                        }
+                    }
+                }
+                return list;
             } else if (args.length == 2) {
                 switch (args[0]) {
                     case "give":

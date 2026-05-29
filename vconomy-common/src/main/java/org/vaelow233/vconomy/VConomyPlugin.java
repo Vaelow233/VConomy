@@ -9,6 +9,7 @@ import org.vaelow233.vconomy.hook.HookProvider;
 import org.vaelow233.vconomy.metrics.MetricsProvider;
 import org.vaelow233.vconomy.storage.StorageProvider;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
@@ -49,4 +50,15 @@ public interface VConomyPlugin extends ConfigProvider, CommandProvider, HookProv
     List<VPlayer> getOnlinePlayers();
 
     boolean isPluginEnabled(String name);
+
+    default void reload() throws Exception {
+        getVConomyLogger().info("Reloading config...");
+        loadConfig(getDataDirectory());
+        getVConomyLogger().info("Reloading storage...");
+        closeStorage();
+        loadStorage(this);
+        postReload();
+    }
+
+    void postReload();
 }

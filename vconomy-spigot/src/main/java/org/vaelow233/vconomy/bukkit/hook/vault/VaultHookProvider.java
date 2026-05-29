@@ -24,4 +24,9 @@ public interface VaultHookProvider {
                 plugin, ServicePriority.High);
         plugin.getLogger().info("Registered Vault economy: " + filtered.get(0).name);
     }
+
+    default void reloadVaultHook(VConomyBukkitPlugin plugin) {
+        Bukkit.getServicesManager().unregister(plugin);
+        loadVaultHook(plugin);
+    }
 }
