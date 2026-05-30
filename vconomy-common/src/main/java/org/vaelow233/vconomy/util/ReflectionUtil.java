@@ -12,7 +12,30 @@ public class ReflectionUtil {
         for (int i = 0; i < jarPath.length; i++) {
             urls[i] = jarPath[i].toUri().toURL();
         }
-        return new URLClassLoader(urls, ReflectionUtil.class.getClassLoader());
+        return new URLClassLoader(urls, ReflectionUtil.class.getClassLoader()) {
+            @Override
+            protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+                synchronized (getClassLoadingLock(name)) {
+                    Class<?> c = findLoadedClass(name);
+                    if (c == null) {
+                        if (name.startsWith("java.")) {
+                            c = super.loadClass(name, resolve);
+                            return c;
+                        }
+                        try {
+                            c = findClass(name);
+                        } catch (ClassNotFoundException e) {
+                            c = super.loadClass(name, resolve);
+                            return c;
+                        }
+                    }
+                    if (resolve) {
+                        resolveClass(c);
+                    }
+                    return c;
+                }
+            }
+        };
     }
 
     public static Object createNoArgInstance(URLClassLoader classLoader, String className) throws Exception {
