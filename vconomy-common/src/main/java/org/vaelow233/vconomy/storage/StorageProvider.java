@@ -116,12 +116,12 @@ public interface StorageProvider {
         Path libsDir = directory.resolve("libs");
         getVConomyLogger().info("Downloading H2 Driver...");
         HttpUtil.downloadIfNotExists(
-                "https://repo1.maven.org/maven2/com/h2database/h2/2.4.240/h2-2.4.240.jar",
+                "https://repo1.maven.org/maven2/com/h2database/h2/2.2.224/h2-2.2.224.jar",
                 libsDir,
-                "h2-2.4.240.jar"
+                "h2-2.2.224.jar"
         );
         getVConomyLogger().info("Loading H2 Driver...");
-        URLClassLoader classLoader = ReflectionUtil.loadJar(libsDir.resolve("h2-2.4.240.jar"));
+        URLClassLoader classLoader = ReflectionUtil.loadJar(libsDir.resolve("h2-2.2.224.jar"));
         Object h2DataSource = ReflectionUtil.createNoArgInstance(classLoader, "org.h2.jdbcx.JdbcDataSource");
         ReflectionUtil.invokeMethod(h2DataSource, "setUser", storageConfig.username);
         ReflectionUtil.invokeMethod(h2DataSource, "setPassword", storageConfig.password);
