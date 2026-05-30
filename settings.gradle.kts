@@ -9,3 +9,4 @@ rootProject.name = "VConomy"
 include("vconomy-common")
 include("vconomy-spigot")
 include("vconomy-paper")
+include("vconomy-folia")

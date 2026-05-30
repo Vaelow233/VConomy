@@ -12,14 +12,15 @@ repositories {
 
 dependencies {
     implementation(project(":vconomy-common"))
-    compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
+    implementation(project(":vconomy-spigot"))
+    compileOnly("dev.folia:folia-api:1.20.1-R0.1-SNAPSHOT")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
     compileOnly("me.clip:placeholderapi:2.12.2")
 }
 
 tasks.withType<JavaCompile> {
-    sourceCompatibility = "21"
-    targetCompatibility = "21"
+    sourceCompatibility = "17"
+    targetCompatibility = "17"
 }
 
 tasks.shadowJar {
