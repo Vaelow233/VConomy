@@ -4,6 +4,7 @@ plugins {
 
 allprojects {
     apply(plugin = "java")
+
     group = properties["group"]!!
     version = properties["version"]!!
 

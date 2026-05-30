@@ -1,0 +1,45 @@
+name: VConomy
+main: org.vaelow233.vconomy.paper.VConomyPaperPlugin
+version: 0.0.2
+api-version: 1.21.1
+authors:
+  - Vaelow233
+dependencies:
+  server:
+    Vault:
+      required: false
+      load: BEFORE
+    PlaceholderAPI:
+      required: false
+      load: BEFORE
+permissions:
+  vconomy.get:
+    description: Allows you to get the balance of yourself
+    default: true
+  vconomy.top:
+    description: Allows you to see the balance top
+    default: true
+  vconomy.pay:
+    description: Allows you to pay money to someone
+    default: true
+  vconomy.get.others:
+    description: Allows you to get the balance of someone
+    default: op
+  vconomy.admin.give:
+    description: Allows you to give someone money
+    default: op
+  vconomy.admin.take:
+    description: Allows you to take money from someone
+    default: op
+  vconomy.admin.set:
+    description: Allows you to set the money of someone
+    default: op
+  vconomy.admin.reset:
+    description: Allows you to reset the money of someone
+    default: op
+  vconomy.reload:
+    description: Allows you to reload the plugin
+    default: op
+  vconomy.admin.help:
+    description: Allows you to see the admin help messages
+    default: op
